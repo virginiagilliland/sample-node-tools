@@ -8,12 +8,7 @@ fetch(`node-projects/convert-data/data.json`)
 		let str = "";
 
 		for (let i = 0; i < data.length; i++) {
-			str += `<p>
-
-            ${data[i].name}.
-            ${data[i].purpose}
-            </p>`;
-
+			str += `<p>${data[i].name}.${data[i].purpose}</p>`;
 		}
 
 		d3.selectAll(".data")

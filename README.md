@@ -12,7 +12,7 @@ Demonstrates
 ## Projects / tools in this repository
 
 1. Static website: e.g. `/index.html` and `/assets/*` which uses external data
-1. Node project to convert CSV > JSON data: In `node-projects/convert-data/`, use `node index.js` 
+1. Node project to convert CSV > JSON data: In `node-projects/convert-data/`, use `node index.js`
 1. Node test server to call `fetch()` and import data from the same origin, avoiding CORS issues
 
 
@@ -45,8 +45,8 @@ CORS also says that to use the fetch() API, 'URL schemes must be "http" or "http
 1. View `/index.html` at https://localhost:3000/
 
 
-The server sets the entire project folder "public":
+The server sets the entire project Git repository folder "public":
 
-- All assets (e.g. [`/node-projects/convert-data/data.json`](https://localhost:3000/node-projects/convert-data/data.json)) can be accessed via absolute link `/` in your code
-- When you finish your project and put it on a live server the absolute `/` will still work
+- All assets (e.g. [`node-projects/convert-data/data.json`](https://localhost:3000/node-projects/convert-data/data.json)) can be accessed via their expected paths in your code
+- When you finish your project and put it on a live server (e.g. Github.io) the paths will still work
 - If you access files via `file:///path/to/project/index.html` then `fetch()` will fail because of CORS
