@@ -1,6 +1,6 @@
 
 
-fetch(`/node-projects/convert-data/data.json`)
+fetch(`node-projects/convert-data/data.json`)
 	.then(response => response.json())
 	.then(data => {
 		console.log(data[0]);
