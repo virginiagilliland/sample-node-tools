@@ -1,11 +1,21 @@
 
-# Sample Node Tools
+
+
+# Sample Node Tools 🦋
 
 Demonstrates
 
-- How to structure a static website that also uses Node for automation
-- Importing CSV, converting and writing JSON
-- A test web server for avoiding CORS issues on localhost
+- How to structure a static website with Javascript ***in the browser*** that also uses Node for automation
+- How to use Node to create a test web server thus avoiding CORS issues with external data on localhost
+- How to use Node to import CSV, convert to JSON, and write to a .json file
+
+## Projects / tools in this repository
+
+1. Static website: e.g. `/index.html` and `/assets/*` which uses external data
+1. Node project to convert CSV > JSON data: In `node-projects/convert-data/`, use `node index.js` 
+1. Node test server to call `fetch()` and import data from the same origin, avoiding CORS issues
+
+
 
 
 
@@ -26,11 +36,6 @@ CORS also says that to use the fetch() API, 'URL schemes must be "http" or "http
 
 
 
-## Three projects in one repository
-
-1. Static website: e.g. `/index.html` and `/assets/*` which uses external data
-1. Node project to convert data: In `node-projects/convert-data/`, use `node index.js` to convert CSV > JSON
-1. Node test server to call `fetch()` and import data from the same origin, avoiding CORS issues
 
 
 ## How to run the server
