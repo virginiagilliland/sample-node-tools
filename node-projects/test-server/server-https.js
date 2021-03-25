@@ -2,13 +2,8 @@
  *	Server HTTPS - Require and start running app as server - A version that runs HTTPS
  */
 
-
-const express = require('express');
-const app = express();
-const port = 3000;
-
-// set whole project directory as public to access index.html, assets/*, etc. 
-app.use(express.static('../../'));
+// require main app and port (using destructuring)
+const [app, port] = require('./app');
 
 // HTTPS dependencies
 const https = require('https');
