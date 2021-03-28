@@ -73,7 +73,7 @@ function getNewToken(oAuth2Client, callback) {
 }
 
 
-
+const csv = require('csvtojson');
 
 
 /**
@@ -89,7 +89,7 @@ function handleData(auth) {
 	sheets.spreadsheets.values.get({
 		// the id and range for your spreadsheet
 		spreadsheetId: '1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms',
-		range: 'Class Data!A2:E',
+		range: 'Class Data!A1:E',
 	}, (err, res) => {
 		if (err) return console.log('The API returned an error: ' + err);
 		const rows = res.data.values;
@@ -103,6 +103,14 @@ function handleData(auth) {
 			// this is where you'll handle the data you return
 			console.log(rows);
 
+			// convert from 2D arrays to string to JSON
+			csv().fromString(rows.join("\n"))
+				.then(function(result) {
+					console.log(result);
+
+					// save json file
+					fs.writeFileSync('./data.json', JSON.stringify(result));
+				});
 
 		} else {
 			console.log('No data found.');
