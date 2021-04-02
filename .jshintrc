@@ -10,5 +10,6 @@
 	"globals": {
 		"$": false,
 		"d3": false
-	}
+	},
+	"-W079": false
 }
