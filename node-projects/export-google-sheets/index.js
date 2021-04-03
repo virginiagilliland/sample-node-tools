@@ -23,11 +23,11 @@ const path = require('path');
 // More about defining a query
 // https://developers.google.com/chart/interactive/docs/querylanguage
 
-const conf = {
+let conf = {
 	name: 'chasing the sun data', // for reference only
 	id: '1-VmzIyWNhzmaAiSLaPCoY6ZnJaxl3G_bxcljgXgxWKU', // from the url
 	out: 'csv', // the default is json
-	sheet: 'time', // the "tab"
+	sheet: 'times', // the "tab"
 	range: 'A4:N100', // !!
 	query: '' // e.g. select+A,SUM(B)+offset+1
 };
@@ -42,7 +42,7 @@ var exports = module.exports = {};
 
 exports.getData = async () => {
 
-	let csv = await fetch(url)
+	let json = await fetch(url)
 		.then(d => d.text()) // get text from stream
 		.then(rows => {
 			// console.log(rows);
@@ -50,21 +50,23 @@ exports.getData = async () => {
 			// documentation https://github.com/d3/d3-dsv
 			return d3.csvParse(rows);
 		});
-	// test - prints row 1
-	console.log(csv[0]);
+	// test
+		// console.log(json);
+	// console.log(json[0]);
+	// console.log(json[3].plant);
 
 	// write the data to a file
-	await fs.writeFile(path.resolve(__dirname, './data.json'), JSON.stringify(csv));
+	await fs.writeFile(path.resolve(__dirname, './data.json'), JSON.stringify(json));
 
 	// return
-	return csv;
+	return json;
 };
 // runs the above module
 exports.getData();
 
 
 
-// 5. (optional) Import this in another script
+// 5. (optional) Import module this in another script
 
 // async function d(){
 // 	let importSpreadsheet = require('../export-google-sheets');
