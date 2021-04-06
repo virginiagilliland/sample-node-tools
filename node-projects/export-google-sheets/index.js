@@ -24,15 +24,15 @@ const path = require('path');
 // https://developers.google.com/chart/interactive/docs/querylanguage
 
 let conf = {
-	name: 'chasing the sun data', // for reference only
-	id: '1-VmzIyWNhzmaAiSLaPCoY6ZnJaxl3G_bxcljgXgxWKU', // from the url
+	name: 'parks database', // for reference only
+	id: '1yAaVXX_Ca--QEEdfO0lBbthnj30UpmQ4PDSjQ63OH58', // from the url
 	out: 'csv', // the default is json
-	sheet: 'times', // the "tab"
-	range: 'A4:N100', // !!
+	sheet: 'data', // the "tab"
+	range: 'A1:L42', // !!
 	query: '' // e.g. select+A,SUM(B)+offset+1
 };
 const url = `https://docs.google.com/spreadsheets/d/${conf.id}/gviz/tq?tqx=out:${conf.out}&sheet=${conf.sheet}&range=${conf.range}&query=${conf.query}`;
-// e.g. https://docs.google.com/spreadsheets/d/1-VmzIyWNhzmaAiSLaPCoY6ZnJaxl3G_bxcljgXgxWKU/gviz/tq?tqx=out:csv&sheet=time
+// e.g. https://docs.google.com/spreadsheets/d/1yAaVXX_Ca--QEEdfO0lBbthnj30UpmQ4PDSjQ63OH58/edit?usp=sharing
 
 
 
