@@ -28,11 +28,11 @@ let conf = {
 	id: '1yAaVXX_Ca--QEEdfO0lBbthnj30UpmQ4PDSjQ63OH58', // from the url
 	out: 'csv', // the default is json
 	sheet: 'data', // the "tab"
-	range: 'A1:L42', // !!
+	range: 'A1:L40', // !!
 	query: '' // e.g. select+A,SUM(B)+offset+1
 };
 const url = `https://docs.google.com/spreadsheets/d/${conf.id}/gviz/tq?tqx=out:${conf.out}&sheet=${conf.sheet}&range=${conf.range}&query=${conf.query}`;
-// e.g. https://docs.google.com/spreadsheets/d/1yAaVXX_Ca--QEEdfO0lBbthnj30UpmQ4PDSjQ63OH58/edit?usp=sharing
+// e.g. https://docs.google.com/spreadsheets/d/1yAaVXX_Ca--QEEdfO0lBbthnj30UpmQ4PDSjQ63OH58/gviz/tq?tqx=out:csv&sheet=times&range
 
 
 
